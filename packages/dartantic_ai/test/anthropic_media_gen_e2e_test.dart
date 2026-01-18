@@ -53,7 +53,11 @@ void main() {
 
         final results = await stream.toList();
         final imageData = _findFirstImageDataPart(results);
-        expect(imageData, isNotNull, reason: 'Expected a DataPart with image/*');
+        expect(
+          imageData,
+          isNotNull,
+          reason: 'Expected a DataPart with image/*',
+        );
         expect(imageData!.bytes, isNotEmpty);
         // Verify the output is different from input (was edited)
         expect(imageData.bytes, isNot(equals(imageBytes)));
@@ -80,7 +84,11 @@ void main() {
 
         final results = await stream.toList();
         final imageData = _findFirstImageDataPart(results);
-        expect(imageData, isNotNull, reason: 'Expected a DataPart with image/*');
+        expect(
+          imageData,
+          isNotNull,
+          reason: 'Expected a DataPart with image/*',
+        );
         expect(imageData!.bytes, isNotEmpty);
       },
       timeout: const Timeout(Duration(minutes: 2)),

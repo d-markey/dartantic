@@ -302,10 +302,7 @@ class Agent {
       _assertNoMultipleTextParts([newUserMessage]);
 
       // Initialize state BEFORE yielding to prevent race conditions
-      final conversationHistory = [
-        ...history,
-        newUserMessage,
-      ];
+      final conversationHistory = [...history, newUserMessage];
 
       // Now yield the user message
       yield ChatResult<String>(
